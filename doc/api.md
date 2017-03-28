@@ -46,6 +46,19 @@ SVG 代码的根元素是以 &lt;svg&gt; 元素开始，&lt;/svg&gt;结束。wid
 - CSS 的 opacity 定义整个元素的透明度。
 
 ## 如何画椭圆形
+```
+<svg width="300" height="300" version="1.2" xml:space="default">
+    <ellipse cx="100" cy="100" rx="50" ry="80" style="fill:#f60;stroke:#000;stroke-width:5;"/>
+</svg>
+```
 
+- SVG的&lt;ellipse&gt;用于创建一个椭圆形。
+- cx 属性定义圆心的 x 坐标。
+- cy 属性定义圆心的 y 坐标。
+- rx 属性定义水平半径。
+- ry 属性定义垂直半径。
+
+
+## 如何画线条
 
 
