@@ -60,5 +60,17 @@ SVG 代码的根元素是以 &lt;svg&gt; 元素开始，&lt;/svg&gt;结束。wid
 
 
 ## 如何画线条
+```
+<svg width="300" height="300" version="1.2" xml:space="default">
+    <line x1="50" y1="50" x2="200" y2="200" style="stroke:#f00;stroke-width:10"/>
+</svg>
+```
 
+- SVG的&lt;line&gt;标签用于创建线条。
+- x1 属性表示线条起始的 x 坐标。
+- y1 属性表示线条起始的 y 坐标。
+- x2 属性表示线条结束的 x 坐标。
+- y2 属性表示线条结束的 y 坐标。
+- CSS 的 stroke 表示边框的颜色,这里也就是指线条的颜色。
+- CSS 的 stroke-width 表示线条的宽度。
 
