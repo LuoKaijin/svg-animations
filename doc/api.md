@@ -74,3 +74,24 @@ SVG 代码的根元素是以 &lt;svg&gt; 元素开始，&lt;/svg&gt;结束。wid
 - CSS 的 stroke 表示边框的颜色,这里也就是指线条的颜色。
 - CSS 的 stroke-width 表示线条的宽度。
 
+## 如何画多边形
+```
+<svg width="300" height="300" version="1.2" xml:space="default">
+    <polygon points="50,50 250,50 150,150" style="fill:#f60;stroke-width:5;stroke:#000;"/>
+</svg>
+```
+
+- SVG 的&lt;polygon&gt;用来创建含有不少于三个边的图形。
+- points 定义多边形每个角的 x 和 y 坐标。
+
+## 如何画折线
+```
+<svg width="300" height="300">
+    <polyline points="0,0 50,0 50,50 100,50 100,100 150,100 150,150" style="fill:#f60;stroke:#000;stroke-width:5"/>
+</svg>
+```
+
+- SVG 的 &lt;polyline&gt; 标签用来画折线。
+- points 属性定义每个角的 x 和 y 坐标。
+
+## 如何画复杂路径
