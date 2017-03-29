@@ -114,3 +114,43 @@ SVG 代码的根元素是以 &lt;svg&gt; 元素开始，&lt;/svg&gt;结束。wid
   Z = closepath
   以上所有命令均允许小写字母。大写表示绝对定位，小写表示相对定位。
   
+## 如何给元素定义滤镜
+```
+<svg width="500" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="Gaussian_Blur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+        </filter>
+    </defs>
+
+    <circle cx="100" cy="100" r="40" stroke="black" stroke-width="2" fill="#f60" style="filter:url(#Gaussian_Blur);"/>
+</svg>
+```
+
+- 使用 &lt;filter&gt; 标签用来定义 SVG 滤镜, &lt;filter&gt; 标签必须嵌套在 &lt;defs&gt; 内。
+- &lt;filter&gt; 上的 id 属性为滤镜定义一个唯一的名称。（同一滤镜可被文档中的多个元素使用）
+- &lt;feGaussianBlur&gt; 标签定义滤镜效果。
+- &lt;feGaussianBlur&gt; 标签的 in="SourceGraphic" 定义了由整个图像创建效果。
+- &lt;feGaussianBlur&gt; 标签的 stdDeviation 属性定义模糊的程度。
+- 在元素的样式上添加 filter:url('#滤镜ID名') 来使用滤镜。
+
+SVG 中,可使用的滤镜如下:
+feBlend
+feColorMatrix
+feComponentTransfer
+feComposite
+feConvolveMatrix
+feDiffuseLighting
+feDisplacementMap
+feFlood
+feGaussianBlur
+feImage
+feMerge
+feMorphology
+feOffset
+feSpecularLighting
+feTile
+feTurbulence
+feDistantLight
+fePointLight
+feSpotLight

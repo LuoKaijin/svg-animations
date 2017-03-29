@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter</title>
+</head>
+
+<body>
+<svg width="500" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="Gaussian_Blur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+        </filter>
+
+        <filter id="Gaussian_Blur2">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+        </filter>
+    </defs>
+
+    <circle cx="100" cy="100" r="40" stroke="black" stroke-width="2" fill="#f60" style="filter:url(#Gaussian_Blur);"/>
+    <ellipse cx="200" cy="200" rx="30" ry="60" style="fill:#456;stroke:#f11;stroke-width:5;filter:url(#Gaussian_Blur2)"/>
+</svg>
+</body>
+</html>
