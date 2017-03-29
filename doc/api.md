@@ -95,3 +95,22 @@ SVG 代码的根元素是以 &lt;svg&gt; 元素开始，&lt;/svg&gt;结束。wid
 - points 属性定义每个角的 x 和 y 坐标。
 
 ## 如何画复杂路径
+```
+<svg width="300" height="300" version="1.2" xml:space="default">
+    <path d="M0 0 L150 100 V200 H100 Z"/>
+</svg>
+```
+
+- SVG 的 &lt;path&gt; 用来定义路径。
+- M = moveto
+  L = lineto
+  H = horizontal lineto
+  V = vertical lineto
+  C = curveto
+  S = smooth curveto
+  Q = quadratic Belzier curve
+  T = smooth quadratic Belzier curveto
+  A = elliptical Arc
+  Z = closepath
+  以上所有命令均允许小写字母。大写表示绝对定位，小写表示相对定位。
+  
