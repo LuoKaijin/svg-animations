@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>feMerge-创建累积而上的图像</title>
+</head>
+<body>
+
+<svg width="500" height="500" version="1.2" xml:space="default">
+    <defs>
+        <filter id="filter" filterUnits="userSpaceOnUse">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+            <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+            <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" specularExponent="20" lighting-color="#bbbbbb" result="specOut">
+                <fePointLight x="-5000" y="-10000" z="20000"/>
+            </feSpecularLighting>
+            <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+            <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+            <feMerge>
+                <feMergeNode in="offsetBlur"/>
+                <feMergeNode in="litPaint"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <g filter="url(#filter)">
+        <path fill="none" stroke="#D90000" stroke-width="10" d="M50,90 C0,90 0,30 50,30 L200,30 C250,30 250,90 200,90 z"/>
+        <text fill="#FFF" stroke="black" font-size="45" font-family="Verdana" x="52" y="76">KAO LA</text>
+    </g>
+</body>
+</html>

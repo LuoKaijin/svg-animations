@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>feOffset-相对当前图像的移动位置</title>
+</head>
+<body>
+
+<svg width="500" height="500" version="1.2" xml:space="default">
+    <defs>
+        <filter id="filter">
+            <feGaussianBlur stdDeviation="4"/>
+            <feOffset dx="15" dy="15"/>
+        </filter>
+    </defs>
+
+    <rect width="200" height="200" style="fill:#000;filter:url(#filter);"/>
+    <rect width="200" height="200" style="fill:#f60;"/>
+</svg>
+</body>
+</html>
