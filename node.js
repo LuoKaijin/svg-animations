@@ -27,18 +27,42 @@ function readFile(path,filesList) {
     files.forEach(walk);
 
     function walk(file){
-        states = fs.statSync(path+'/'+file);
+        var filePath = path+'/'+file;
+        states = fs.statSync(filePath);
+
         if(states.isDirectory()){
-            readFile(path+'/'+file,filesList);
+            readFile(filePath,filesList);
         }else{
+            var fileContent = fs.readFileSync(filePath, "utf8"),
+                titleStartIndex = fileContent.indexOf('<title>') + 7,
+                titleEndIndex = fileContent.indexOf('</title>'),
+                fileTitle = fileContent.substring(titleStartIndex,titleEndIndex),
+                pathStartIndex = filePath.indexOf('/src') + 4;
             //创建一个对象保存信息
             var obj = new Object();
             obj.name = file; //文件名
-            obj.path = path + '/' + file;  //文件绝对路径
+            obj.title = fileTitle||'无标题';
+            obj.path = filePath.substr(pathStartIndex);  //文件绝对路径
             filesList.push(obj);
         }
     }
 }
+
+
+/*
+ * 检查文件夹是否存在
+ * @param path 文件路径
+ */
+function isDirectoryExist(path) {
+    fs.stat(path, function(err, stat){
+        if(stat && stat.isDirectory()) {
+            return true;
+        } else {
+            return false
+        }
+    });
+}
+
 
 /*
  * 写入文件 utf-8格式
@@ -58,6 +82,8 @@ var dataStr = JSON.stringify({
     data:filesList
 });
 dataStr = 'module.exports = ' + dataStr;
-
-fs.mkdirSync("build");
+//判断文件夹是否存在,不存在则新建
+if(!isDirectoryExist(path.resolve(__dirname, 'build'))){
+    fs.mkdirSync("build");
+}
 writeFile("build/data.js",dataStr);

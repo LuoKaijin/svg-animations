@@ -1,5 +1,5 @@
-{% for item in data %}
 <div class="m-list">
-    <a class="link" href="{{item.path}}">{{item.name}}</a>
+    {% for item in data %}
+    <a class="link" href="{{item.path}}" title="{{item.name}}">{{item.title}}</a>
+    {% endfor %}
 </div>
-{% endfor %}

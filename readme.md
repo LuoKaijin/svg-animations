@@ -2,6 +2,8 @@
 
 npm install
 
+npm run gendata
+
 npm run build
 
 npm run start
