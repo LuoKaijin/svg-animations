@@ -4,7 +4,7 @@
 'use strict';
 
 var Nunjucks = require('nunjucks'),
-    Data = require('./data.js');
+    Data = require('../build/data.js');
 
 
 function init(){

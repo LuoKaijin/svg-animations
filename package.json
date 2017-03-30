@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/rainnaZR/svg-animations#readme",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "nunjucks": "^3.0.0",
     "path": "^0.12.7",
     "webpack": "^2.3.2",
