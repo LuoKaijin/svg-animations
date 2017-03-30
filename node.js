@@ -34,17 +34,16 @@ function readFile(path,filesList) {
             //创建一个对象保存信息
             var obj = new Object();
             obj.name = file; //文件名
-            obj.path = path+'/'+file;  //文件绝对路径
+            obj.path = path + '/' + file;  //文件绝对路径
             filesList.push(obj);
         }
     }
 }
 
-
 /*
  * 写入文件 utf-8格式
  * @param fileName 文件名
- * @param data 文件内容
+ * @param data 内容
  */
 function writeFile(fileName,data) {
     fs.writeFile(fileName,data,'utf-8',complete);
@@ -54,14 +53,11 @@ function writeFile(fileName,data) {
 }
 
 
-var filesList = geFileList(path.resolve(__dirname, 'src/step1'));
-var str='';
-for(var i=0;i<filesList.length;i++) {
-    var item = filesList[i];
-    var desc ="文件名:"+item.name + "  "
-        +"路径:"+item.path;
-    str+=desc +"\n"
-}
+var filesList = geFileList(path.resolve(__dirname, 'src/demo'));
+var dataStr = JSON.stringify({
+    data:filesList
+});
+dataStr = 'module.exports = ' + dataStr;
 
-
-writeFile("test.txt",str);
+fs.mkdirSync("build");
+writeFile("build/data.js",dataStr);
