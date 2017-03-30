@@ -50,21 +50,6 @@ function readFile(path,filesList) {
 
 
 /*
- * 检查文件夹是否存在
- * @param path 文件路径
- */
-function isDirectoryExist(path) {
-    fs.stat(path, function(err, stat){
-        if(stat && stat.isDirectory()) {
-            return true;
-        } else {
-            return false
-        }
-    });
-}
-
-
-/*
  * 写入文件 utf-8格式
  * @param fileName 文件名
  * @param data 内容
@@ -82,8 +67,14 @@ var dataStr = JSON.stringify({
     data:filesList
 });
 dataStr = 'module.exports = ' + dataStr;
-//判断文件夹是否存在,不存在则新建
-if(!isDirectoryExist(path.resolve(__dirname, 'build'))){
-    fs.mkdirSync("build");
-}
-writeFile("build/data.js",dataStr);
+//当build目录没有时新建build目录
+fs.stat(path.resolve(__dirname, 'build'), function(err, stat) {
+    var isExist;
+    if(err == null) {
+        if(stat.isDirectory()) {
+            isExist = true;
+        }
+    }
+    if(!isExist) fs.mkdirSync("build");
+    writeFile("build/data.js",dataStr);
+});
