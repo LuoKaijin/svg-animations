@@ -1,0 +1,10 @@
+{% for item in data %}
+<div class="m-list">
+    <div class="title">{{item.title}}</div>
+
+    {%for x in item.list %}
+    <a class="link" href="{{x.path}}">{{x.name}}</a>
+    {% endfor %}
+
+</div>
+{% endfor %}

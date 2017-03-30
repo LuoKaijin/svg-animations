@@ -3,14 +3,17 @@
  */
 'use strict';
 
-var Nunjucks = require('nunjucks');
+var Nunjucks = require('nunjucks'),
+    Data = require('./data.js');
+
 
 function init(){
+    var body = document.getElementById('page');
+
     Nunjucks.configure({
         autoescape: true
     });
-    var string = Nunjucks.renderString('Hello {{ username }}', { username: 'James' });
-    document.getElementById('page').innerHTML = string;
+    body.innerHTML = Nunjucks.render('template.html',Data);
 }
 
 init();
