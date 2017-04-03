@@ -14,7 +14,8 @@ npm run start
         - webpack.config.js  webpack打包配置文件
     - doc       工程相关的文档资料
     - src       工程资源文件
-        - demo      相关案例说明      
+        - demo      相关案例说明 
+        - src       静态文件(css,images等)
         - index.html    首页
         - index.js      首页脚本
         - template.html 首页需要的模板文件

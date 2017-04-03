@@ -46,12 +46,14 @@ function readFile(path,filesList) {
             }else{
                 suffix = '【高级篇】';
             }
-            //创建一个对象保存信息
-            var obj = new Object();
-            obj.name = file; //文件名
-            obj.title = suffix + fileTitle||'无标题';
-            obj.path = filePath.substr(pathStartIndex);  //文件绝对路径
-            filesList.push(obj);
+            if(filePath.indexOf('.html') > -1){
+                //创建一个对象保存信息
+                var obj = new Object();
+                obj.name = file; //文件名
+                obj.title = suffix + fileTitle||'无标题';
+                obj.path = filePath.substr(pathStartIndex);  //文件绝对路径
+                filesList.push(obj);
+            }
         }
     }
 }

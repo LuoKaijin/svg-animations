@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>模拟音量高低效果</title>
+    <link rel="stylesheet" type="text/css" href="../../../rsc/css/base.css" />
     <style>
-        *{
-            margin:0;
-            padding:0;
-        }
         .m-box{
-            height:100px;
-            margin:50px 100px;
+            height:200px;
         }
         .m-box .title{
             margin:0 0 15px;
@@ -41,43 +37,48 @@
             0%{height:0;}
             100%{height:50px;}
         }
+
     </style>
 </head>
 
 <body>
-<!-- 用CSS实现 -->
-<div class="m-box">
-    <div class="title">CSS实现</div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+<div class="g-body">
+    <!-- 用CSS实现 -->
+    <div class="m-box">
+        <div class="title">CSS实现</div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- 用SVG实现 -->
+    <div class="m-box">
+        <div class="title">SVG实现</div>
+        <svg width="300" height="300" version="1.2" xml:space="default">
+            <rect height="0" width="5" rx="2.5" style="fill:#f60;">
+                <animate attributeName="height" attributeType="XML" from="0" to="50" begin="0.5s" dur="1.2s" calcMode="linear" repeatCount="indefinite" />
+            </rect>
+            <rect height="0" width="5" rx="2.5" x="10" style="fill:#f60;">
+                <animate attributeName="height" attributeType="XML" from="0" to="50" begin="0s" dur="1.2s" calcMode="linear" repeatCount="indefinite" />
+            </rect>
+            <rect height="0" width="5" rx="2.5" x="20" style="fill:#f60;">
+                <animate attributeName="height" attributeType="XML" from="0" to="50" begin="0.75s" dur="1.2s" calcMode="linear" repeatCount="indefinite" />
+            </rect>
+            <rect height="0" width="5" rx="2.5" x="30" style="fill:#f60;">
+                <animate attributeName="height" attributeType="XML" from="0" to="50" begin="0.25s" dur="1.2s" calcMode="linear" repeatCount="indefinite" />
+            </rect>
+            <rect height="0" width="5" rx="2.5" x="40" style="fill:#f60;">
+                <animate attributeName="height" attributeType="XML" from="0" to="50" begin="0.5s" dur="1.2s" calcMode="linear" repeatCount="indefinite" />
+            </rect>
+        </svg>
+    </div>
+
+    <!-- markdown文件介绍 -->
+    <div id="mdcontent"></div>
 </div>
 
-<!-- 用SVG实现 -->
-<div class="m-box">
-    <div class="title">SVG实现</div>
-    <svg width="300" height="300" version="1.2" xml:space="default">
-        <rect height="0" width="5" rx="2.5" style="fill:#f60;">
-            <animate attributeName="height" attributeType="XML" from="0" to="50" begin="0.5s" dur="1.2s" calcMode="linear" repeatCount="indefinite" />
-        </rect>
-        <rect height="0" width="5" rx="2.5" x="10" style="fill:#f60;">
-            <animate attributeName="height" attributeType="XML" from="0" to="50" begin="0s" dur="1.2s" calcMode="linear" repeatCount="indefinite" />
-        </rect>
-        <rect height="0" width="5" rx="2.5" x="20" style="fill:#f60;">
-            <animate attributeName="height" attributeType="XML" from="0" to="50" begin="0.75s" dur="1.2s" calcMode="linear" repeatCount="indefinite" />
-        </rect>
-        <rect height="0" width="5" rx="2.5" x="30" style="fill:#f60;">
-            <animate attributeName="height" attributeType="XML" from="0" to="50" begin="0.25s" dur="1.2s" calcMode="linear" repeatCount="indefinite" />
-        </rect>
-        <rect height="0" width="5" rx="2.5" x="40" style="fill:#f60;">
-            <animate attributeName="height" attributeType="XML" from="0" to="50" begin="0.5s" dur="1.2s" calcMode="linear" repeatCount="indefinite" />
-        </rect>
-    </svg>
-</div>
-
-<!-- markdown文件介绍 -->
-<div id="mdcontent"></div>
+<script src="/volumn.bundle.js"></script>
 </body>
 </html>
