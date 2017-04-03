@@ -3,6 +3,8 @@ http://www.w3school.com.cn/svg/index.asp
 
 https://msdn.microsoft.com/zh-cn/library/gg193979
 
+http://www.zhangxinxu.com/wordpress/2014/08/so-powerful-svg-smil-animation/
+
 
 ## 简介
 SVG 指可伸缩矢量图形。是使用 XML 来描述二维图形和绘图程序的语言。
@@ -186,7 +188,7 @@ feMerge | 创建累积而上的图像
 ```
 <svg width="800" height="800">
     <circle r="100" cx="200" cy="400" fill="#f60">
-        <animate attributeName="opacity" attributeType="CSS" from="1" to="0" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" attributeType="CSS" from="1" to="0" begin="1s" dur="5s" repeatCount="indefinite"/>
         <animate attributeName="r" attributeType="XML" begin="0s" dur="5s" from="100" to="150" repeatCount="indefinite"/>
         <animateMotion path="M 0 0 L 100 100" dur="5s" fill="freeze" repeatCount="indefinite"/>
     </circle>

@@ -72,7 +72,7 @@ function writeFile(fileName,data) {
 
 var filesList = geFileList(path.resolve(__dirname, 'src/demo'));
 var dataStr = JSON.stringify({
-    data:filesList
+    data:filesList.reverse()
 });
 dataStr = 'module.exports = ' + dataStr;
 //当build目录没有时新建build目录
