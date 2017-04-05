@@ -72,7 +72,7 @@ function writeFile(fileName,data) {
 }
 
 
-var filesList = geFileList(path.resolve(__dirname, 'src/demo'));
+var filesList = geFileList(path.resolve(__dirname, 'src/pages'));
 var dataStr = JSON.stringify({
     data:filesList.reverse()
 });

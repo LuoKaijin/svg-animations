@@ -5,7 +5,7 @@ const renderer = new marked.Renderer();
 module.exports = {
     entry: {
         index: path.resolve(__dirname, '../src/index.js'),
-        volumn: path.resolve(__dirname, '../src/demo/step2/volumn/index.js')
+        volumn: path.resolve(__dirname, '../src/pages/step2/volumn/index.js')
     },
     output: {
         filename: '[name].bundle.js',
