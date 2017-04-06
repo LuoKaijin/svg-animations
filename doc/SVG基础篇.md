@@ -109,7 +109,8 @@ SVG 代码的根元素是以 &lt;svg&gt; 元素开始，&lt;/svg&gt;结束。wid
 
 - SVG 的 &lt;path&gt; 用来定义路径。
 - M = moveto,L = lineto,H = horizontal lineto,V = vertical lineto,C = curveto,S = smooth curveto,Q = quadratic Belzier curve,T = smooth quadratic Belzier curveto,A = elliptical Arc,Z = closepath,以上所有命令均允许小写字母。大写表示绝对定位，小写表示相对定位。
-
+- stroke-dasharray 定义短划线和缺口的长度,实现虚线的效果。
+- stroke-dashoffset 标识的是整个路径的偏移值。
   
 ### 如何给元素定义滤镜
 ```
@@ -203,3 +204,9 @@ feMerge | 创建累积而上的图像
 - &lt;animate&gt; 标签给元素添加动画。
 - &lt;animateMotion&gt;	标签使元素沿着动作路径移动。
 - &lt;animateTransform&gt;	标签对元素进行动态的属性转换。
+
+
+### &lt;symbol&gt; 和 &lt;use&gt; , &lt;g&gt;标签
+&lt;symbol&gt; 标记的作用是定义一个图像模板，使用 &lt;use&gt; 标记实例化它，然后在SVG文档中反复使用，这种用法非常的高效。&lt;symbol&gt; 本身不会输出任何图像，只有使用 &lt;use&gt; 实例化后才会显示。
+
+&lt;g&gt;标记就是‘group’的简写，是用来分组用的，它能把多个元素放在一组里，对 &lt;g&gt; 标记实施的样式和渲染会作用到这个分组内的所有元素上。组内的所有元素都会继承 &lt;g&gt; 标记上的所有属性。
