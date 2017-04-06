@@ -37,21 +37,20 @@ function readFile(path,filesList) {
                 titleStartIndex = fileContent.indexOf('<title>') + 7,
                 titleEndIndex = fileContent.indexOf('</title>'),
                 fileTitle = fileContent.substring(titleStartIndex,titleEndIndex),
-                pathStartIndex = filePath.indexOf('/src') + 4,
-                suffix;
-            if(filePath.indexOf('/step1') > -1){
-                suffix = '【基础篇】';
-            }else if(filePath.indexOf('/step2') > -1){
-                suffix = '【实践篇】';
-            }else{
-                suffix = '【高级篇】';
-            }
+                pathStartIndex = filePath.indexOf('/src') + 4;
             if(filePath.indexOf('.html') > -1){
                 //创建一个对象保存信息
                 var obj = new Object();
                 obj.name = file; //文件名
-                obj.title = suffix + fileTitle||'无标题';
+                obj.title = fileTitle||'无标题';
                 obj.path = filePath.substr(pathStartIndex);  //文件绝对路径
+                if(filePath.indexOf('/step1') > -1){
+                    obj.type = 1;
+                }else if(filePath.indexOf('/step2') > -1){
+                    obj.type = 2;
+                }else{
+                    obj.type = 3;
+                }
                 filesList.push(obj);
             }
         }

@@ -1,5 +1,8 @@
 <div class="m-list">
     {% for item in data %}
-    <a class="link" href="{{item.path}}" title="{{item.name}}">{{item.title}}</a>
+    <a class="link" href="{{item.path}}" title="{{item.name}}">
+        {% if item.type == 1 %}【基础篇】{% elseif item.type == 2%}【实践篇】{% else %}【高级篇】{% endif %}
+        {{item.title}}
+    </a>
     {% endfor %}
 </div>
