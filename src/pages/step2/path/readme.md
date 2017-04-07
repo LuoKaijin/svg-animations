@@ -5,7 +5,7 @@
 
 ### &lt;path&gt; 标签命令
 
-试用 &lt;path&gt; 标签的 d 属性标识路径集合,勾画线条的形状。
+使用 &lt;path&gt; 标签的 d 属性标识路径集合,勾画线条的形状。
 
 - M = moveto
 - L = lineto
