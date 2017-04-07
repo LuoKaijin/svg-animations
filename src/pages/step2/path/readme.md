@@ -104,6 +104,7 @@ css 代码如下:
 - 使用 CSS3 的 animation 属性来修改实例化路径的 stroke-dasharray 或 stroke-dashoffset 的值,从而实现动画效果。
 - 可新建多个同样的 SVG 路径,并且每个路径的颜色和动画效果都不一样,最终形成错落的完整的动画。
 
+git: https://github.com/rainnaZR/svg-animations/tree/master/src/pages/step2/path
 
 参考资料: http://www.alloyteam.com/2017/02/the-beauty-of-the-lines-break-lines-svg-animation/
 

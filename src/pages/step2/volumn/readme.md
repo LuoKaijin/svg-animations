@@ -59,3 +59,5 @@
 
 - svg 动画无须定义样式,完全通过定义标签的属性来定义动画。
 - svg 动画不能定义轮流反向播放动画的效果。
+
+git 地址: https://github.com/rainnaZR/svg-animations/tree/master/src/pages/step2/volumn
