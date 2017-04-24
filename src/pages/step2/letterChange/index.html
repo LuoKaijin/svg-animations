@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+    <title>字母变化</title>
+    <link rel="stylesheet" type="text/css" href="../../../rsc/css/base.css" />
+    <style type="text/css">
+        .m-box svg{
+            width:100%;
+            height:500px;
+            background:#E91E63;
+        }
+        .txt{
+            font-size:150px;
+            fill:none;
+            stroke:#FFEB3B;
+            stroke-width:2px;
+            -webkit-animation:animate1 3s ease-in-out forwards;
+        }
+        .btns{
+            position:fixed;
+            bottom:0;
+            left:0;
+            width:100%;
+            background:rgba(233,30,99,.8);
+        }
+        .item{
+            float:right;
+            margin-right:20px;
+            text-align:center;
+            color:#FFEB3B;
+        }
+        .btn{
+            width:50px;
+            height:50px;
+            background:url('http://haitao.nos.netease.com/N1VItz0Zz3nTAZiMtimgT1704091949_750_750.jpg');
+            background-size:100% 100%;
+            border-radius:50px;
+            border:4px solid rgba(255,255,255,0.7);
+            box-shadow:2px 2px 20px 3px rgba(255,255,255,0.8);
+            -webkit-animation:rotate 5s ease-in-out infinite;
+        }
+        .path{
+            -webkit-transform:translate(150px,150px);
+            -webkit-animation:animation2 10s ease-in-out infinite;
+        }
+        @keyframes animate1{
+            0%{
+                stroke-dasharray:0% 30%;
+            }
+            80%{
+                stroke-dasharray:50% 0%;
+                fill:#E91E63;
+            }
+            100%{
+                stroke-dasharray:50% 0%;
+                fill:#FFEB3B;
+            }
+        }
+        @keyframes rotate {
+            0%{
+                -webkit-transform:rotate(0deg);
+            }
+            100%{
+                -webkit-transform:rotate(360deg);
+            }
+        }
+        @keyframes animation2 {
+            0%,
+            7% {
+                d: path('M0,100 L50,100 L50,50 L50,0 L0,0 L0,50 L50,50')
+            }
+            11%,
+            17% {
+                d: path('M0,0 L50,0 L50,100 L0,100 L0,0 L0,50 L50,50')
+            }
+            21%,
+            27% {
+                d: path('M0,0 L50,0 L50,20 L50,40 L50,60 L50,80 L50,100')
+            }
+            31%,
+            37% {
+                d: path('M50,0 L0,0 L0,50 L0,100 L50,100, L50,50 L0,50')
+            }
+            41%,
+            47% {
+                d: path('M50,0 L0,0 L0,50 L25,50 L50,50 L50,100 L0,100')
+            }
+            51%,
+            57% {
+                d: path('M0,0 L0,50 L50,50 L50,0 L50,35 L50,70 L50,100')
+            }
+            61%,
+            67% {
+                d: path('M0,0 L50,0 L50,100 L0,100 L50,100 L50,50 L0,50')
+            }
+            71%,
+            77% {
+                d: path('M0,0 L50,0 L50,50 L25,50 L0,50 L0,100 L50,100')
+            }
+            81%,
+            87% {
+                d: path('M50,0 L50,15 L50,30 L50,45 L50,60 L50,75 L50,100')
+            }
+            91%,
+            96% {
+                d: path('M0,0 L50,0 L50,50 L50,100 L0,100 L0,25 L0,0')
+            }
+        }
+        #mdcontent{
+            padding:0 50px 100px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="m-box">
+    <div class="ztag">
+        <svg version="1.2" xml:space="default">
+            <symbol id="letter">
+                <text x="38%" y="50%">A</text>
+            </symbol>
+
+            <g>
+                <use xlink:href="#letter" class="txt"></use>
+            </g>
+        </svg>
+    </div>
+    <div class="btns">
+        <div class="item">
+            <p>字母切换</p>
+            <div class="btn ztag"></div>
+        </div>
+        <div class="item">
+            <p>数字切换</p>
+            <div class="btn ztag"></div>
+        </div>
+        <div class="item">
+            <p>音乐播放</p>
+            <div class="btn ztag"></div>
+        </div>
+    </div>
+</div>
+
+<!-- markdown文件介绍 -->
+<div id="mdcontent"></div>
+
+<audio class="ztag" width="0" height="0" src="fly.mp3" style="position:absolute;left:-9999px;top:-1000px;" loop controls></audio>
+<script src="/letterChange.bundle.js"></script>
+</body>
+</html>

@@ -6,7 +6,8 @@ module.exports = {
     entry: {
         index: path.resolve(__dirname, '../src/index.js'),
         volumn: path.resolve(__dirname, '../src/pages/step2/volumn/index.js'),
-        path: path.resolve(__dirname, '../src/pages/step2/path/index.js')
+        path: path.resolve(__dirname, '../src/pages/step2/path/index.js'),
+        letterChange: path.resolve(__dirname, '../src/pages/step2/letterChange/index.js')
     },
     output: {
         filename: '[name].bundle.js',
